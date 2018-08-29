@@ -1,11 +1,36 @@
 let app = new Vue({
-	el: '.vue',
+	el: '#vm',
 	data: {
-		mensaje: 'Learn Vuejs Easy way'
+		mensaje: 'This is the message',
+	},
+	beforeCreate: function(){
+		console.log('Llamando beforeCreate');
+	},
+	created: function(){
+		console.log('Llamando created.');
+	},
+	beforeMount: function(){
+		console.log('Llamando beforeMount');
+	},
+	mounted: function(){
+		console.log('Llamando mounted');
+	},
+	beforeUpdate: function(){
+		console.log('Llamando beforeUpdate');
+	},
+	updated: function(){
+		console.log('Llamando updated');
+	},
+	beforeDestroy: function(){
+		console.log('Llamando beforeDestroy');
+	},
+	destroyed: function(){
+		console.log('Llamando destroy');
 	},
 	methods: {
-		mostrarMensaje: function(){
-			return this.mensaje
+		destruir: function(){
+			this.$destroy();
 		}
 	}
+
 })
